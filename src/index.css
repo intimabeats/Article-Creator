@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos globais */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  scroll-behavior: smooth;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Estilos para o conteúdo do artigo */
+.article-content h1 {
+  @apply text-3xl font-bold mb-4 text-gray-900;
+}
+
+.article-content h2 {
+  @apply text-2xl font-semibold mb-3 mt-6 text-gray-900;
+}
+
+.article-content h3 {
+  @apply text-xl font-semibold mb-2 mt-5 text-gray-900;
+}
+
+.article-content p {
+  @apply mb-4 text-gray-700 leading-relaxed;
+}
+
+.article-content ul, .article-content ol {
+  @apply mb-4 pl-5;
+}
+
+.article-content ul {
+  @apply list-disc;
+}
+
+.article-content ol {
+  @apply list-decimal;
+}
+
+.article-content li {
+  @apply mb-1 text-gray-700;
+}
+
+.article-content a {
+  @apply text-blue-600 hover:text-blue-800 hover:underline;
+}
+
+.article-content figure {
+  @apply my-6;
+}
+
+.article-content img {
+  @apply rounded-lg shadow-md max-w-full mx-auto;
+}
+
+.article-content figcaption {
+  @apply text-sm text-gray-600 mt-2 text-center;
+}
+
+.article-content blockquote {
+  @apply pl-4 border-l-4 border-gray-300 italic text-gray-700 my-4;
+}
+
+/* Animações */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Transições */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Estilos para formulários */
+input:focus, textarea:focus, select:focus {
+  @apply outline-none ring-2 ring-blue-500 border-blue-500;
+}
+
+/* Estilos para scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
+
+/* Estilos para seleção de texto */
+::selection {
+  @apply bg-blue-100 text-blue-900;
+}
+
+/* Estilos para placeholders */
+::placeholder {
+  @apply text-gray-400;
+}
+
+/* Utilitários adicionais */
+.aspect-w-16 {
+  position: relative;
+  padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+  --tw-aspect-w: 16;
+}
+
+.aspect-h-9 {
+  --tw-aspect-h: 9;
+}
+
+.aspect-w-16 > * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* Gradientes */
+.bg-gradient-blue {
+  @apply bg-gradient-to-r from-blue-600 to-blue-400;
+}
+
+.text-gradient-blue {
+  @apply bg-gradient-to-r from-blue-700 to-blue-500 bg-clip-text text-transparent;
+}
